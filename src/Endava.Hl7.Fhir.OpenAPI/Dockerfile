@@ -9,7 +9,7 @@ WORKDIR /src
 COPY ["src/Endava.Hl7.Fhir.OpenAPI/Endava.Hl7.Fhir.OpenAPI.csproj", "src/Endava.Hl7.Fhir.OpenAPI/"]
 COPY ["src/Endava.Hl7.Fhir.Common.Core/Endava.Hl7.Fhir.Common.Core.csproj", "src/Endava.Hl7.Fhir.Common.Core/"]
 COPY ["src/Endava.Hl7.Fhir.Common.Contracts/Endava.Hl7.Fhir.Common.Contracts.csproj", "src/Endava.Hl7.Fhir.Common.Contracts/"]
-RUN dotnet restore "src/Hl7.Fhir.OpenAPI/Hl7.Fhir.OpenAPI.csproj"
+RUN dotnet restore "src/Endava.Hl7.Fhir.OpenAPI/Endava.Hl7.Fhir.OpenAPI.csproj"
 COPY . .
 WORKDIR "/src/src/Endava.Hl7.Fhir.OpenAPI"
 RUN dotnet build "Endava.Hl7.Fhir.OpenAPI.csproj" -c Release -o /app/build
