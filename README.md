@@ -1,5 +1,5 @@
 ![](res/hl7-fhir.png)
-# HL7.FHIR.OpenAPI.Demo
+# HL7 FHIR OpenAPI Demo
 
 # Overview
 When adopting FHIR, a common scenario is needing to convert your existing data into the FHIR model. For this demo, we will be building a OpenAPI which maps custom EHRs into FHIR Patient and Observation resources. Other resources were not implemented (yet).
@@ -67,6 +67,8 @@ Some useful links:
 - [Firely .NET SDK FHIR Community](https://chat.fhir.org/#narrow/stream/179171-dotnet)
 - [List of FHIR Test servers](https://confluence.hl7.org/display/FHIR/Public+Test+Servers)
 
-For any questions/suggestions contact me on [LinkedIn](https://si.linkedin.com/in/matjazbravc).
+## Contributing
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Trademarks
 HL7®, FHIR® and the flame Design mark are the registered trademarks of Health Level Seven International.
