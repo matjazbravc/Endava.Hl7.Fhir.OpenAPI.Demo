@@ -3,8 +3,11 @@ using Endava.Hl7.Fhir.OpenAPI.Services.Swagger.Filters;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System;
@@ -45,15 +48,15 @@ namespace Endava.Hl7.Fhir.OpenAPI.Services.Swagger
             foreach (var description in _apiProvider.ApiVersionDescriptions)
             {
                 options.SwaggerDoc(description.GroupName, CreateInfoForApiVersion(description));
+
+                // Include Document file
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+
+                // Provide a custom strategy for generating the unique Id's
+                options.CustomSchemaIds(x => x.FullName);
             }
-
-            // Include Document file
-            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            options.IncludeXmlComments(xmlPath);
-
-            // Provide a custom strategy for generating the unique Id's
-            options.CustomSchemaIds(x => x.FullName);
         }
 
         /// <summary>
@@ -78,6 +81,16 @@ namespace Endava.Hl7.Fhir.OpenAPI.Services.Swagger
                 {
                     Name = _swaggerConfig.LicenseName,
                     Url = new Uri(_swaggerConfig.LicenseUrl)
+                },
+                // Add a logo to ReDoc page
+                Extensions = new Dictionary<string, IOpenApiExtension>
+                {
+                    {
+                        "x-logo", new OpenApiObject
+                        {
+                            {"url", new OpenApiString("/wwwroot/swagger/fhir-logo.png")}
+                        }
+                    }
                 }
             };
 

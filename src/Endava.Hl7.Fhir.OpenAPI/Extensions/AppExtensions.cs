@@ -33,14 +33,18 @@ namespace Endava.Hl7.Fhir.OpenAPI.Extensions
             });
         }
 
+        /// <summary>
+        /// Register the ReDoc middleware
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="config"></param>
         public static void UseReDocMiddleware(this IApplicationBuilder app, IConfiguration config)
         {
             var swaggerConfig = config.GetSection(nameof(SwaggerConfig)).Get<SwaggerConfig>();
-            // ReDoc
             app.UseReDoc(sa =>
             {
                 sa.DocumentTitle = $"{swaggerConfig.Title} Documentation";
-                sa.SpecUrl = $"{swaggerConfig.RoutePrefix}/V1/{swaggerConfig.DocsFile}";
+                sa.SpecUrl = $"/{swaggerConfig.RoutePrefix}/V1/{swaggerConfig.DocsFile}";
             });
         }
     }

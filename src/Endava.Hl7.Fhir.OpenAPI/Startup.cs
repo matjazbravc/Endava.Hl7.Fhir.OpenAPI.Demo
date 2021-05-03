@@ -76,17 +76,17 @@ namespace Endava.Hl7.Fhir.OpenAPI
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfiguration config)
         {
-            // Need for a ReDoc logo
-            const string LOGO_FILE_PATH = "Resources/Images";
+            // Needed for a ReDoc logo
+            const string LOGO_FILE_PATH = "wwwroot/swagger";
             var fileprovider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, LOGO_FILE_PATH));
             var requestPath = new PathString($"/{LOGO_FILE_PATH}");
-            
+
             app.UseDefaultFiles(new DefaultFilesOptions
             {
                 FileProvider = fileprovider,
                 RequestPath = requestPath,
             });
-            
+
             app.UseFileServer(new FileServerOptions()
             {
                 FileProvider = fileprovider,
