@@ -1,13 +1,22 @@
 ![](res/hl7-fhir.png)
 # HL7.FHIR.OpenAPI.Demo
 
-## Introduction
+# Overview
 When adopting FHIR, a common scenario is needing to convert your existing data into the FHIR model. For this demo, we will be building a OpenAPI which maps custom EHRs into FHIR Patient and Observation resources. Other resources were not implemented (yet).
 For this purpose we will use the [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0),  [Firely .NET SDK](https://fire.ly/products/firely-net-sdk/) and public FHIR server [UHN_HAPI Server](http://hapi.fhir.org) (R4) which is regularly purged and reloaded with fixed test data.
 
+Table of Contents
+=================
+
+   * [Overview](#overview)
+   * [What is FHIR?](#what-is-fhir)
+     * [Why FHIR?](#why-fhir)
+   * [Conclusion](#conclusion)
+     
+     
 ![](res/hapi-fhir.png)
 
-## What is FHIR?
+# What is FHIR?
 **FHIR** (**F**ast **H**ealthcare **I**nteroperability **R**esources) is a new and emerging standard being developed under the auspices of the Health Level Seven (HL7) organization. Pronounced as 'Fire,' it was initially developed by Graham Grieve, who insisted FHIR be **open sourced**. At its core, FHIR is intended to be the next generation of healthcare interoperability. It tries to combine the best features of HL7 Version 2 and Version 3, in which Grieve was significantly involved.
 
 ## Why FHIR?
