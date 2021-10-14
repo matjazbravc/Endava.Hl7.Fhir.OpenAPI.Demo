@@ -62,6 +62,9 @@ Enjoy!
 
 ## Further information
 Some useful links:
+- [EHR to HL7 FHIR Integration: The Software Developer's Guide - Part 1](https://www.endava.com/en/blog/Engineering/2021/EHR-to-HL7-FHIR-Integration-The-Software-Developers-Guide-Part-1)
+- [EHR to HL7 FHIR Integration: The Software Developer's Guide - Part 2](https://www.endava.com/en/blog/Engineering/2021/EHR-to-HL7-FHIR-Integration-The-Software-Developers-Guide-Part-2)
+- [EHR to HL7 FHIR Integration: The Software Developer's Guide - Part 3](https://www.endava.com/en/blog/Engineering/2021/EHR-to-HL7-FHIR-Integration-The-Software-Developers-Guide-Part-3)
 - [Extra documentation for FhirClient](https://docs.fire.ly/firelynetsdk/client.html)  
 - [HL7 FHIR Restful API specification](https://www.hl7.org/fhir/http.html)
 - [Firely .NET SDK FHIR Community](https://chat.fhir.org/#narrow/stream/179171-dotnet)
