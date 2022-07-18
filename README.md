@@ -50,10 +50,13 @@ FHIR R4, released in 2019, includes a normative base with backwards compatibilit
 Enjoy!
 
 ## Prerequisites
-- [Visual Studio](https://www.visualstudio.com/vs/community) 2019 16.8.1 or greater 
-- [.NET 5.x](https://dotnet.microsoft.com/download/dotnet/5.0)
+- [Visual Studio](https://www.visualstudio.com/vs/community) 2022 17.2.6 or greater
+- [.NET SDK 6.0](https://dotnet.microsoft.com/download/dotnet/6.0)
+- [Docker](https://www.docker.com/resources/what-container)
 
-## Tags, technologies and sources
+## Tags & Technologies
+- [.NET 6](https://github.com/dotnet/core/blob/main/release-notes/6.0)
+- [ASP.NET Core 6.0](https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0?view=aspnetcore-6.0)
 - [Swagger](https://swagger.io/) - interactive API documentation
 - [API-Docs](https://api-docs.io/) - friendly API documentation
 - [Serilog](https://serilog.net/) - flexible, structured logger
