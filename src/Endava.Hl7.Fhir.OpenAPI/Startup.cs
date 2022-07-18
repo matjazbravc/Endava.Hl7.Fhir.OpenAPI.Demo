@@ -22,6 +22,7 @@ using Serilog;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Task = System.Threading.Tasks.Task;
 
 namespace Endava.Hl7.Fhir.OpenAPI
 {
@@ -133,12 +134,18 @@ namespace Endava.Hl7.Fhir.OpenAPI
             // Adds a CORS middleware
             app.UseCors("EnableCORS");
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(configure =>
             {
-                //Add health check endpoint
-                endpoints.MapHealthChecks("/healthz");
-                // Adds enpoints for controller actions without specifyinf any routes
-                endpoints.MapControllers();
+	            configure.MapControllers();
+	            configure.MapHealthChecks("/healthz");
+	            configure.MapDefaultControllerRoute();
+	            configure.MapHealthChecks("health");
+	            // Redirect root to Swagger UI
+	            configure.MapGet("", context =>
+	            {
+		            context.Response.Redirect("./swagger/index.html", permanent: false);
+		            return Task.FromResult(0);
+	            });
             });
 
             // Load Citizenship list from CSV file to be a global available
